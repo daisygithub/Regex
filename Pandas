@@ -1,3 +1,6 @@
+https://kanoki.org/  
+
+
 Pandas extract
 Extract the first 5 characters of each country using ^(start of the String) and {5} (for 5 characters) 
 and create a new column first_five_letter
@@ -53,4 +56,19 @@ The result shows True for all countries start with character ‘F’ and False w
 
 S=pd.Series(['Finland','Colombia','Florida','Japan','Puerto Rico','Russia','france'])
 S.str.contains('^F.*')
+
+In our original dataframe we will filter all the countries starting with character ‘I’ . 
+We just need to filter all the True values that is returned by contains() function.
+
+df[df['Country (region)'].str.contains('^I.*')==True]
+
+
+Pandas Split
+This is equivalent to str.split() and accepts regex, if no regex passed then the default is \s (for whitespace). 
+Here we are splitting the text on white space and expands set as True splits that into 3 different columns
+You can also specify the param n to Limit number of splits in output
+
+s = pd.Series(["StatueofLiberty built-on 28-Oct-1886"])
+s.str.split(r"\s", n=-1,expand=True)
+
 
