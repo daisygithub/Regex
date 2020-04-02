@@ -1,6 +1,16 @@
 https://kanoki.org/  
 
-
+if s_name is not None:
+    sender_name = re.sub("s*<", "", re.sub(":s*", "", s_name.group()))
+else:
+    sender_name = None
+We use the re module’s re.sub() function twice before assigning the string to a variable. 
+First, we remove the colon and any whitespace characters between it and the name. 
+We do this by substituting :s* with an empty string "". 
+Then, we remove whitespace characters and the angle bracket on the other side of the name, again substituting it with an empty string. 
+  
+  
+  
 Pandas extract
 Extract the first 5 characters of each country using ^(start of the String) and {5} (for 5 characters) 
 and create a new column first_five_letter
