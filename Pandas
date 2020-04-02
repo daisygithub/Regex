@@ -1,5 +1,7 @@
 https://kanoki.org/  
 
+https://www.dataquest.io/blog/regular-expressions-data-scientists/
+
 if s_name is not None:
     sender_name = re.sub("s*<", "", re.sub(":s*", "", s_name.group()))
 else:
